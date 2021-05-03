@@ -12,7 +12,8 @@ const master = new Master(resolve(__dirname, './bot/index.js'), {
   intents: 32511,
   cache: {
     users: true,
-    members: true
+    members: true,
+    channels: true
   },
   log: (msg: string, cluster: any) => {
     log(cluster, master.processes.reduce((a, c) => c.id.length > a ? c.id.length : a, 1), msg)
